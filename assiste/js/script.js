@@ -144,7 +144,7 @@ function validateForm() {
   }
 
   alert("You are logging in successfully");
-  window.location.href = "dashboard.html";
+  window.location.href = "index.html";
   return true;
 }
 
@@ -153,5 +153,69 @@ function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("userEmail");
   alert("You have been logged out!");
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
+
+// ============ Check Login Before Loading Page ============
+if (!localStorage.getItem("isLoggedIn")) {
+  window.location.href = "login.html";
+}
+
+// ============ Check Login Before Loading Page ============
+if (!localStorage.getItem("isLoggedIn")) {
+  window.location.href = "login.html";
+}
+
+function validateForm() {
+  const username = document.getElementById("login_username").value.trim();
+  const password = document.getElementById("login_password").value.trim();
+  const errorContainer = document.getElementById("errorContainer");
+  errorContainer.textContent = "";
+
+  if (!username || !password) {
+    errorContainer.textContent = "Username and password cannot be empty!";
+    return false;
+  }
+  if (password.length < 6) {
+    errorContainer.textContent = "Password must be at least 6 characters!";
+    return false;
+  }
+
+  // ✅ Set login state
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userEmail", username);
+
+  alert("You are logging in successfully");
+  window.location.href = "index.html";
+  return true;
+}
+function validateForm() {
+  const username = document.getElementById("login_username").value.trim();
+  const password = document.getElementById("login_password").value.trim();
+  const errorContainer = document.getElementById("errorContainer");
+  errorContainer.textContent = "";
+
+  if (!username || !password) {
+    errorContainer.textContent = "Username and password cannot be empty!";
+    return false;
+  }
+  if (password.length < 6) {
+    errorContainer.textContent = "Password must be at least 6 characters!";
+    return false;
+  }
+
+  // ✅ Set login state
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userEmail", username);
+
+  alert("You are logging in successfully");
+  window.location.href = "index.html";
+  return true;
+}
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("userEmail");
+  alert("You have been logged out!");
+  window.location.href = "login.html";
+}
+
