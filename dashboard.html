@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assiste/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>English~জানালা</title>
+</head>
+<body>
+  <section>
+    <nav class="fixed top-0 left-0 shadow-sm w-full z-10 bg-color">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex  justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center">
+                        <img src="assiste/image/english_logo_1.png" class="w-[150px] custom mr-3 sm:h-9" alt="english_logo_1 ">
+                    </a>
+                    <div class="hidden md:ml-10 md:flex md:space-x-10">
+                        <a href="#" class="text-black hover:text-gray-200 px-3 py-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="#" class="text-black hover:text-gray-200 px-3 py-2 text-sm font-medium">
+                            About
+                        </a>
+                        <a href="#" class="text-black hover:text-gray-200 px-3 py-2 text-sm font-medium">
+                            Services
+                        </a>
+                        <a href="#" class="text-black hover:text-gray-200 px-3 py-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-4 md:flex md:items-center md:space-x-4">
+                        <span class="hidden lg:block">
+                            <a href="#FQA"
+                            class="hidden scroll-smooth lg:block">
+                            <button class="btn btn-outline btn-primary">
+                               <span class="mx-2  rounded-full"><i class="fa-solid fa-question"></i></span> 
+                                FAQ</button>
+                        </a>
+                        </span>
+                        <span class="mx-4 hidden lg:block">
+                            <a href="#learnSection"
+                            class="scroll-smooth">
+                            <button class="btn btn-outline btn-primary"><i class="fas fa-book-open"></i> Learn</button>
+                        </a>
+                        </span>
+                        <span class="hidden lg:block">
+                          
+                            <button onclick="logout()" class="btn btn-outline btn-primary"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                       
+                        </span>
+                    </div>
+                    <div class="flex items-center md:hidden">
+                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-blue-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white bg-opacity-90">
+                <a href="#" class="text-black block px-3 py-2 rounded-md text-base font-medium">
+                    Home
+                </a>
+                <a href="#" class="text-black hover:text-blue-500 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                    About
+                </a>
+                <a href="#" class="text-black hover:text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                    Services
+                </a>
+                <a href="#" class="text-black hover:text-blue-500 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                    Contact
+                </a>
+                <div class="pt-4 pb-3 border-t border-gray-700">
+                    <div class="inline-flex items-center px-5 space-y-3">
+                        <span class="">
+                            <a href="#FQA"
+                            class="">
+                            <button class="btn btn-outline btn-primary">
+                               <span class="mx-2  rounded-full"><i class="fa-solid fa-question"></i></span> 
+                                FAQ</button>
+                        </a>
+                        </span>
+                        <span class="mx-4 ">
+                            <a href="#learnSection"
+                            class="">
+                            <button class="btn btn-outline btn-primary"><i class="fas fa-book-open"></i> Learn</button>
+                        </a>
+                        </span>
+                        <span class="-mt-3">
+                            <button onclick="logout()" class="btn btn-outline btn-primary"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero background to show transparent navbar -->
+
+    
+  </section>
+  <!-- Vocabularies -->
+
+  <section class="flex flex-col mt-24 md:flex-row" id="learnSection">
+    <div class="flex-1 m-6">
+        <div class="text-center ml-10" id="">
+            <h1 class="max-w-5xl lg:ml-12 text-2xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
+              <strong class="text-blue-500">Let's</strong> Learn Vocabularies <br class="hidden lg:block">
+            </h1>
+            <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-500">
+                আজই শুরু করুন আপনার ভাষা শেখার যাত্রা! আপনি যদি একেবারে নতুন হন কিংবা দক্ষতা আরও বাড়াতে চান, আমাদের Interactive Lessons আপনাকে পৌঁছে দেবে এক নতুন উচ্চতায়।</p>
+            <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6">
+               
+            </div>
+          </div>
+
+        <div class="flex flex-wrap justify-center" id="customLevel">
+           
+        </div>
+        
+    </div>
+</section>
+<section>
+    <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 scroll-smooth" id="cardSection">
+            <!-- CARD  -->
+            
+            <main class="w-full" id="hidenMain">
+                <div class="hero bg-base-200 w-full h-96 lg:w-[1280px] mx-auto lg:-ml-5">
+                    <div class="hero-content text-center">
+                      <div class="max-w-md">
+                        <p class="text-center text-sm mb-5 text-black">আপনি এখনো কোন Lesson Select করেননি। </p>
+                        <h2 class="text-center text-3xl text-black">একটি Lesson Select করুন।</h2>
+                      </div>
+                    </div>
+                  </div>
+            </main>
+            <main id="emtySection"></main>
+        </div>
+        
+        
+    </div>
+   </section>
+   <section class="py-10 bg-gray-50 sm:py-16 lg:py-24 scroll-smooth" id="FQA">
+    <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                <strong class="text-sky-500">Frequently</strong> Asked Questions
+            </h2>
+        </div>
+        <div class="max-w-6xl mx-auto mt-8 space-y-4 md:mt-16">
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question1" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">1. the difference between var, let, and const</span>
+                    <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer1" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        <strong>1. var</strong> <br>
+                        Scope: Function-scoped. <br>
+                        
+                        Hoisting: Gets hoisted to the top of its scope and initialized with undefined. <br>
+                        
+                        Redeclaration: Can be redeclared and updated within the same scope. <br>
+                        
+                        Usage: Older way to declare variables. Not recommended in modern JavaScript because it can cause bugs due to its function scope and hoisting behavior.
+                    </p> <br>
+                    <p>
+                        <strong>2. let</strong> <br>
+                        Scope: Block-scoped (anything inside {}). <br>
+                        
+                        Hoisting: Hoisted but not initialized. Accessing before declaration causes a ReferenceError (Temporal Dead Zone). <br>
+                        
+                        Redeclaration: Cannot be redeclared in the same scope, but can be updated. <br>
+                        
+                        Usage: Recommended when the value of the variable changes.
+                    </p>  <br>
+                    <p>
+                        <strong>3. const</strong> <br>
+                        Scope: Block-scoped. <br>
+                        
+                        Hoisting: Same as let (hoisted but not initialized). <br>
+                        
+                        Redeclaration: Cannot be redeclared or reassigned, but if it's an object/array, properties/elements can be changed. <br>
+                        
+                        Usage: Use when you don't want to reassign the variable.
+                    </p> <br>
+                    
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question2" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">2. the difference between map(), forEach(), and filter()</span>
+                    <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer2" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        <strong>1. map()</strong> <br>
+                        Purpose: Creates a new array by applying a function to each element of the original array. <br>
+                        Returns: A new array with the transformed elements. <br>
+                        Use when: You need to transform or modify each element in an array. <br>
+                    </p> <br>
+                    <p>
+                        <strong>2. forEach()</strong> <br>
+                        Purpose: Executes a function once for each element in an array, but doesn't return anything. <br>
+                        Returns: Undefined, always. <br>
+                        Use when: You want to do something (like logging or updating an external variable) with each element but don’t need a new array.
+                    </p>  <br>
+                    <p>
+                        <strong>3. filter()</strong> <br>
+                        
+                        Purpose: Creates a new array containing only elements that pass a test (return true in the callback function). <br>
+                        
+                        Returns: A new array with filtered elements. <br>
+                        
+                        Use when: You want to keep or exclude certain elements based on a condition.
+                    </p> 
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question3" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">3. Explain arrow functions and how they are different from regular functions</span>
+                    <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer3" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                       <strong>Arrow Functions (=>)</strong><br>
+                       Arrow functions are a simpler way to write functions in JavaScript, introduced in ES6. <br>
+                       <b>  ✅ Basic Syntax:</b> <br>
+                       <pre><code>
+                        // Regular function
+                        function add(a, b) {
+                          return a + b;
+                        }
+                        
+                        // Arrow function
+                        const add = (a, b) => a + b;
+                          </code></pre>
+                    </p>
+                    <br>
+                    <p>
+                       <strong> ✅ Features:</strong>
+                        <ol>
+                            <li> 
+                                Shorter syntax.
+                            </li>
+                            <li>
+                                They don’t have their own this, arguments, super, or new.target.
+                               
+                            </li>
+                            <li>
+                                Useful for callback functions, array methods, etc.
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question4" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">4. How JavaScript Promises work</span>
+                    <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer4" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        JavaScript Promises provide a way to handle asynchronous operations by representing a value that may be available now, in the future, or never. Here’s an overview of how they work: <br>
+                        <strong>1. Promise States</strong> <br>
+                        A Promise has three states: <br>
+                       1. <b>Pending:</b> The initial state, meaning the operation is still in progress. <br>
+                       2. <b>Fulfilled:</b> Indicates that the operation completed successfully, and the promise now holds a value.
+
+                       <br>
+                       3. <b>Rejected:</b> Means the operation failed, and the promise holds a reason (typically an error) for the failure. <br class="mb-5">
+                    </p>
+                    <p class="mt-5">
+                        <strong class="">2. Creating a Promise</strong> <br>
+                        You can create a promise using the <mark class="bg-yellow-300">Promise</mark> constructor: <br>
+                       <pre>
+                        <code>
+                            const myPromise = new Promise((resolve, reject) => {
+                                // Do some asynchronous work...
+                                if (/* operation successful */) {
+                                  resolve('Success!');
+                                } else {
+                                  reject('Error occurred');
+                                }
+                              });
+                        </code>
+                       </pre>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question5" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">5. How closures work in JavaScript</span>
+                    <svg id="arrow5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer5" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        Closures in JavaScript allow a function to access variables from an enclosing scope, even after that outer function has finished executing. This means the inner function "remembers" the environment in which it was created.
+                    </p> <br>
+                    <p>
+                       <strong> How Closures Work</strong> <br>
+                       <b> Creation of the Scope:</b>
+                        When you define a function inside another function, the inner function has access to the outer function’s variables and parameters.
+                        <br>
+                       <strong> Retaining Access:</strong>
+                        Even after the outer function completes execution, the inner function continues to hold a reference to the outer function's scope. This preserved scope is what we call a "closure".
+                        <br>
+                        <strong>Practical Use:
+                        </strong> <br>
+                      <b> Data Encapsulation:</b> Closures enable the creation of private variables and methods.
+                          <br>
+                       <b>Callbacks and Asynchronous Code:</b> They allow you to use data from a specific context in asynchronous functions like event handlers or timers.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 textbase mt-9">
+            Still have questions?
+            <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact
+                our support
+            </span>
+        </p>
+    </div>
+</section>
+<footer class="w-full h-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!--Grid-->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
+            <div class="col-span-full mb-10 lg:col-span-2 lg:mb-0">
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <img src="assiste/image/english_logo_1.png" class="w-[200px] custom mr-3 sm:h-9" alt="english_logo_1 ">
+                </a>
+                <p class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left"> ইংরেজি শিখুন সহজে</p>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                
+            </div>
+            
+            <div class="lg:mx-auto text-left ">
+                
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                
+            </div>
+        </div>
+        <!--Grid-->
+        <div class="py-7 border-t border-gray-200">
+            <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+                <span class="text-sm text-gray-500 ">©<a href="">Providing</a>ED-Tech Applications since <strong class="" id="years"></strong></span>
+                <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                    <a href="javascript:;"  class="w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#33CCFF] hover:bg-gray-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <g id="Social Media">
+                        <path id="Vector" d="M11.3214 8.93666L16.4919 3.05566H15.2667L10.7772 8.16205L7.1914 3.05566H3.05566L8.47803 10.7774L3.05566 16.9446H4.28097L9.022 11.552L12.8088 16.9446H16.9446L11.3211 8.93666H11.3214ZM9.64322 10.8455L9.09382 10.0765L4.72246 3.95821H6.60445L10.1322 8.8959L10.6816 9.66481L15.2672 16.083H13.3852L9.64322 10.8458V10.8455Z" fill="white"/>
+                        </g>
+                      </svg>
+                    </a>
+                    <a href="javascript:;"  class="relative w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[linear-gradient(45deg,#FEE411_6.9%,#FEDB16_10.98%,#FEC125_17.77%,#FE983D_26.42%,#FE5F5E_36.5%,#FE2181_46.24%,#9000DC_85.57%)]  hover:bg-gradient-to-b from-gray-900 to-gray-900  
+                    ">
+                        <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63434 7.99747C5.63434 6.69062 6.6941 5.63093 8.00173 5.63093C9.30936 5.63093 10.3697 6.69062 10.3697 7.99747C10.3697 9.30431 9.30936 10.364 8.00173 10.364C6.6941 10.364 5.63434 9.30431 5.63434 7.99747ZM4.35427 7.99747C4.35427 10.0108 5.98723 11.6427 8.00173 11.6427C10.0162 11.6427 11.6492 10.0108 11.6492 7.99747C11.6492 5.98418 10.0162 4.3522 8.00173 4.3522C5.98723 4.3522 4.35427 5.98418 4.35427 7.99747ZM10.9412 4.20766C10.9411 4.37615 10.991 4.54087 11.0846 4.681C11.1783 4.82113 11.3113 4.93037 11.4671 4.99491C11.6228 5.05945 11.7942 5.07639 11.9595 5.04359C12.1249 5.01078 12.2768 4.92971 12.3961 4.81062C12.5153 4.69153 12.5966 4.53977 12.6295 4.37453C12.6625 4.2093 12.6457 4.03801 12.5812 3.88232C12.5168 3.72663 12.4076 3.59354 12.2674 3.49988C12.1273 3.40622 11.9625 3.35619 11.7939 3.35612H11.7936C11.5676 3.35623 11.3509 3.44597 11.1911 3.60563C11.0313 3.76529 10.9414 3.98182 10.9412 4.20766ZM5.132 13.7759C4.43946 13.7444 4.06304 13.6291 3.81289 13.5317C3.48125 13.4027 3.24463 13.249 2.99584 13.0007C2.74705 12.7524 2.59305 12.5161 2.46451 12.1847C2.367 11.9348 2.25164 11.5585 2.22016 10.8664C2.18572 10.1181 2.17885 9.89331 2.17885 7.99752C2.17885 6.10174 2.18629 5.87758 2.22016 5.12866C2.2517 4.43654 2.36791 4.06097 2.46451 3.81035C2.59362 3.47891 2.7474 3.24242 2.99584 2.99379C3.24428 2.74515 3.48068 2.59124 3.81289 2.46278C4.06292 2.36532 4.43946 2.25004 5.132 2.21857C5.88074 2.18416 6.10566 2.17729 8.00173 2.17729C9.89779 2.17729 10.1229 2.18472 10.8723 2.21857C11.5648 2.25009 11.9406 2.36623 12.1914 2.46278C12.5231 2.59124 12.7597 2.74549 13.0085 2.99379C13.2573 3.24208 13.4107 3.47891 13.5398 3.81035C13.6373 4.06023 13.7527 4.43654 13.7841 5.12866C13.8186 5.87758 13.8255 6.10174 13.8255 7.99752C13.8255 9.89331 13.8186 10.1175 13.7841 10.8664C13.7526 11.5585 13.6367 11.9347 13.5398 12.1847C13.4107 12.5161 13.2569 12.7526 13.0085 13.0007C12.76 13.2488 12.5231 13.4027 12.1914 13.5317C11.9414 13.6292 11.5648 13.7444 10.8723 13.7759C10.1236 13.8103 9.89865 13.8172 8.00173 13.8172C6.10481 13.8172 5.88051 13.8103 5.132 13.7759ZM5.07318 0.941429C4.31699 0.975845 3.80027 1.09568 3.34902 1.27116C2.88168 1.45239 2.48605 1.69552 2.09071 2.09C1.69537 2.48447 1.45272 2.88049 1.27139 3.34755C1.0958 3.79882 0.975892 4.31494 0.941455 5.07068C0.90645 5.82761 0.898438 6.0696 0.898438 7.99747C0.898438 9.92534 0.90645 10.1673 0.941455 10.9243C0.975892 11.68 1.0958 12.1961 1.27139 12.6474C1.45272 13.1142 1.69543 13.5106 2.09071 13.9049C2.48599 14.2992 2.88168 14.542 3.34902 14.7238C3.80113 14.8993 4.31699 15.0191 5.07318 15.0535C5.83096 15.0879 6.0727 15.0965 8.00173 15.0965C9.93075 15.0965 10.1729 15.0885 10.9303 15.0535C11.6865 15.0191 12.2029 14.8993 12.6544 14.7238C13.1215 14.542 13.5174 14.2994 13.9127 13.9049C14.3081 13.5105 14.5502 13.1142 14.7321 12.6474C14.9077 12.1961 15.0281 11.68 15.062 10.9243C15.0964 10.1668 15.1044 9.92534 15.1044 7.99747C15.1044 6.0696 15.0964 5.82761 15.062 5.07068C15.0276 4.31489 14.9077 3.79853 14.7321 3.34755C14.5502 2.88077 14.3075 2.4851 13.9127 2.09C13.518 1.69489 13.1215 1.45239 12.655 1.27116C12.2029 1.09568 11.6865 0.975277 10.9308 0.941429C10.1735 0.907013 9.93132 0.898438 8.00229 0.898438C6.07327 0.898438 5.83096 0.906445 5.07318 0.941429Z" fill="white"/>
+                            </svg>
+                            
+                    </a>
+                    <a href="javascript:;"  class="relative w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#337FFF]  hover:bg-gray-900 ">
+                        <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.04111 7.81204L7.41156 5.46043H5.1296V3.93188C5.1296 3.28886 5.44818 2.66054 6.46692 2.66054H7.51899V0.657999C6.90631 0.560385 6.28723 0.507577 5.66675 0.5C3.78857 0.5 2.56239 1.62804 2.56239 3.66733V5.46043H0.480469V7.81204H2.56239V13.5H5.1296V7.81204H7.04111Z" fill="currentColor"/>
+                            </svg>
+                             
+                    </a>
+                    <a href="javascript:;"  class="relative w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#FF0000]  hover:bg-gray-900 ">
+                        <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9191 1.10651C14.558 1.27906 15.0602 1.78251 15.2299 2.42069C15.5388 3.57887 15.5388 5.99687 15.5388 5.99687C15.5388 5.99687 15.5388 8.41487 15.2299 9.57306C15.0578 10.2136 14.5556 10.7171 13.9191 10.8872C12.7638 11.1969 8.12875 11.1969 8.12875 11.1969C8.12875 11.1969 3.49603 11.1969 2.33844 10.8872C1.69952 10.7147 1.19735 10.2112 1.0276 9.57306C0.71875 8.41487 0.71875 5.99687 0.71875 5.99687C0.71875 5.99687 0.71875 3.57887 1.0276 2.42069C1.1997 1.78015 1.70188 1.27669 2.33844 1.10651C3.49603 0.796875 8.12875 0.796875 8.12875 0.796875C8.12875 0.796875 12.7638 0.796875 13.9191 1.10651ZM10.4981 5.99687L6.6481 8.22578V3.76796L10.4981 5.99687Z" fill="white"/>
+                            </svg>
+                              
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="assiste/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+</html>
