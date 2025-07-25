@@ -5,54 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>English~জানালা</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="assiste/css/style.css" />
 </head>
-<body>
-  <div class="bg-white h-screen flex items-center justify-center">
-    <div class="max-w-7xl px-4">
-      <div class="flex flex-col lg:flex-row items-center">
-        <!-- Text + Form Section -->
-        <div class="text-center lg:text-left">
-          <h1 class="text-5xl font-extrabold text-gray-800">English is Easy!!</h1>
-          <p class="mt-3 text-gray-600 max-w-xl">
-            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ।
-          </p>
+<body class="bg-gradient-to-br from-white via-blue-50 to-indigo-100">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="flex flex-col lg:flex-row items-center gap-10 max-w-6xl p-6">
+      
+      <!-- Left Section -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-5xl font-extrabold text-indigo-700 mb-4">English is Easy!!</h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের <span class="font-semibold text-indigo-600">Interactive Lessons</span> আপনাকে নিয়ে যাবে অন্য একটি Level এ।
+        </p>
+      </div>
 
-          <!-- Login Form -->
-          <form onsubmit="return validateForm();" class="mt-8 w-full max-w-sm bg-white p-6 rounded-lg shadow">
-            <input
-              type="text"
-              id="login_username"
-              placeholder="Enter your username"
-              class="w-full mb-4 p-3 border rounded text-black"
-              required
-            />
-            <input
-              type="password"
-              id="login_password"
-              placeholder="Enter your password"
-              class="w-full mb-2 p-3 border rounded text-black"
-              required
-            />
-            <div id="errorContainer" class="text-red-600 text-sm mb-4"></div>
-            <button
-              type="submit"
-              class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded"
-            >
-              Get started
-            </button>
-          </form>
-        </div>
-
-        <!-- Image Section -->
-        <div class="mt-8 lg:mt-0 lg:ml-8 lg:w-1/2">
-          <img
-            src="assiste/image/hero-student.png"
-            class="w-full h-auto object-cover"
-            alt="Student learning"
+      <!-- Right Section (Form) -->
+      <div class="w-full max-w-sm bg-white p-8 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-indigo-800 mb-6">Login to Continue</h2>
+        <form onsubmit="return validateForm();" novalidate>
+          <input
+            type="text"
+            id="login_username"
+            placeholder="Username"
+            class="input input-bordered w-full mb-4 text-black"
+            required
           />
-        </div>
+          <input
+            type="password"
+            id="login_password"
+            placeholder="Password"
+            class="input input-bordered w-full mb-3 text-black"
+            required
+          />
+          <div id="errorContainer" class="text-red-500 text-sm mb-3"></div>
+          <button
+            type="submit"
+            class="btn w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white hover:from-indigo-600 hover:to-blue-600 font-semibold"
+          >
+            <i class="fas fa-sign-in-alt mr-2"></i> Get Started
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -80,8 +74,9 @@
       localStorage.setItem("userEmail", username);
       alert("Login successful!");
       window.location.href = "index.html";
-      return false; // prevent form submission
+      return false; // prevent default form action
     }
   </script>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </body>
 </html>
