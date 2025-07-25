@@ -31,7 +31,7 @@
                     </p>
                    
                     <div x-data="{ loginEmail: '', loginPassword: '', passwordPattern: /^(?=.*[A-Z])(?=.*W).+$/, showPassword: false }">
-                        <form  onsubmit="return validateForm();" action="dashboard.html"  method="post"   class="w-full  divide-neutral-200  bg-white lg:w-96" x-on:submit.prevent="login">
+                        <form  onsubmit="return validateForm();" action="index.html"  method="post"   class="w-full  divide-neutral-200  bg-white lg:w-96" x-on:submit.prevent="login">
                          <div class="py-2"> 
                          <input type="text" id="login_username" name="login_username" x-model="loginEmail" class="block w-full h-12 px-4 py-3 placeholder-black bg-white border rounded-sm appearance-none text-black focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset focus:ring-2 text-xs" placeholder="Enter your name" required="">
                          

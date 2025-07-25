@@ -20,8 +20,18 @@ document.querySelectorAll('[id^="question"]').forEach((button, index) => {
 
 // ============ On Page Load ============
 window.onload = () => {
-  document.getElementById('years').innerText = new Date().getFullYear();
-  levelAll();
+  // Check login
+  if (!localStorage.getItem("isLoggedIn") && !window.location.href.includes("login.html")) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  const yearSpan = document.getElementById('years');
+  if (yearSpan) yearSpan.innerText = new Date().getFullYear();
+
+  if (document.getElementById("customLevel")) {
+    levelAll();
+  }
 };
 
 // ============ Load All Levels ============
@@ -107,7 +117,7 @@ function showInfoModal(word, meaning, pronunciation) {
   const modal = document.createElement('div');
   modal.className = 'fixed z-50 inset-0 bg-black bg-opacity-60 flex items-center justify-center';
   modal.innerHTML = `
-    <div class="bg-white max-w-md p-6 rounded shadow-xl relative">
+    <div class="bg-white max-w-md p-6 rounded shadow-xl relative" role="dialog">
       <button onclick="this.closest('div[role=dialog]').remove()" 
         class="absolute top-2 right-2 text-gray-600 text-2xl">&times;</button>
       <h2 class="text-lg font-bold mb-2">${word} <span class="text-sm text-gray-500">(${pronunciation})</span></h2>
@@ -115,7 +125,6 @@ function showInfoModal(word, meaning, pronunciation) {
       <p><strong>Example:</strong> The kids were <b>${word.toLowerCase()}</b> to open their gifts.</p>
     </div>
   `;
-  modal.setAttribute('role', 'dialog');
   document.body.appendChild(modal);
 }
 
@@ -123,7 +132,7 @@ function showInfoModal(word, meaning, pronunciation) {
 function playPronunciation(word, meaning = "") {
   const text = `${word}. অর্থ হলো: ${meaning}.`;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'en-US'; // or 'bn-BD' for Bengali if available
+  utterance.lang = 'en-US'; // or 'bn-BD' if needed
   window.speechSynthesis.speak(utterance);
 }
 
@@ -143,6 +152,9 @@ function validateForm() {
     return false;
   }
 
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userEmail", username);
+
   alert("You are logging in successfully");
   window.location.href = "index.html";
   return true;
@@ -155,67 +167,3 @@ function logout() {
   alert("You have been logged out!");
   window.location.href = "login.html";
 }
-
-// ============ Check Login Before Loading Page ============
-if (!localStorage.getItem("isLoggedIn")) {
-  window.location.href = "login.html";
-}
-
-// ============ Check Login Before Loading Page ============
-if (!localStorage.getItem("isLoggedIn")) {
-  window.location.href = "login.html";
-}
-
-function validateForm() {
-  const username = document.getElementById("login_username").value.trim();
-  const password = document.getElementById("login_password").value.trim();
-  const errorContainer = document.getElementById("errorContainer");
-  errorContainer.textContent = "";
-
-  if (!username || !password) {
-    errorContainer.textContent = "Username and password cannot be empty!";
-    return false;
-  }
-  if (password.length < 6) {
-    errorContainer.textContent = "Password must be at least 6 characters!";
-    return false;
-  }
-
-  // ✅ Set login state
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userEmail", username);
-
-  alert("You are logging in successfully");
-  window.location.href = "index.html";
-  return true;
-}
-function validateForm() {
-  const username = document.getElementById("login_username").value.trim();
-  const password = document.getElementById("login_password").value.trim();
-  const errorContainer = document.getElementById("errorContainer");
-  errorContainer.textContent = "";
-
-  if (!username || !password) {
-    errorContainer.textContent = "Username and password cannot be empty!";
-    return false;
-  }
-  if (password.length < 6) {
-    errorContainer.textContent = "Password must be at least 6 characters!";
-    return false;
-  }
-
-  // ✅ Set login state
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userEmail", username);
-
-  alert("You are logging in successfully");
-  window.location.href = "index.html";
-  return true;
-}
-function logout() {
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("userEmail");
-  alert("You have been logged out!");
-  window.location.href = "login.html";
-}
-
