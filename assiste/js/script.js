@@ -143,21 +143,24 @@ function validateForm() {
   const errorContainer = document.getElementById("errorContainer");
   errorContainer.textContent = "";
 
+  // Empty field check
   if (!username || !password) {
     errorContainer.textContent = "Username and password cannot be empty!";
     return false;
   }
+
+  // Password length check
   if (password.length < 6) {
     errorContainer.textContent = "Password must be at least 6 characters!";
     return false;
   }
 
+  // Success — pretend login is valid
   localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userEmail", username);
-
-  alert("You are logging in successfully");
+  localStorage.setItem("userEmail", username); // optional: store user email/name
+  alert("Login successful!");
   window.location.href = "index.html";
-  return true;
+  return false; // prevent default form submit
 }
 
 // ============ Logout ============
@@ -166,4 +169,12 @@ function logout() {
   localStorage.removeItem("userEmail");
   alert("You have been logged out!");
   window.location.href = "login.html";
+}
+
+// ============ Check Login ============
+function checkLogin() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+  }
 }
